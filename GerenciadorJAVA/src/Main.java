@@ -1,6 +1,4 @@
-import java.util.Collections;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -26,32 +24,56 @@ public class Main {
             } else {
                 switch (option) {
                     case "1":
-                        System.out.println("===Gerenciador de Estoque===");
-                        System.out.println("Digite o nome do produto para adicionar à lista:");
-                        String add = scanner.nextLine();
-                        Estoque.add(add);
-                        System.out.println("O item " + add + "foi adicionado á lista");
-                        System.out.println(Estoque);
+                        boolean ativoadd = true;
+                        while (ativoadd) {
+                            System.out.println("===Gerenciador de Estoque===");
+                            System.out.println("Digite o nome do produto para adicionar à lista:");
+                            String add = scanner.nextLine();
+                            Estoque.add(add);
+                            System.out.println("O item " + add + "foi adicionado á lista");
+                            System.out.println(Estoque);
+                            System.out.println("Você deseja adicionar algo mais?\n" +
+                                    "Sim\n" +
+                                    "Não");
+                            String yesno = scanner.nextLine();
+                            if (yesno.equals("Não") || yesno.equals("não") || yesno.equals("nÃO") || (yesno.equals("Nao") || yesno.equals("nao") || yesno.equals("no") || yesno.equals("nAO"))) {
+
+                                ativoadd = false;
+                            }
+                        }
                         break;
                     case "2":
                         System.out.println("===Gerenciador de Estoque===");
                         System.out.println("Estoque: " + Estoque);
                         break;
                     case "3":
-                        System.out.println("===Gerenciador de Estoque===");
-                        System.out.println("Diga a localização do item a ser removido: ");
-                        System.out.println(Estoque);
-                        String remove = scanner.nextLine();
-                        int RemoveItem = Integer.parseInt(remove) - 1;
-                        if (RemoveItem < 0 || RemoveItem >= Estoque.size()) {
-                            System.out.println("Valor Invalido");
-                            break;
+                        boolean ativoremove = true;
+                        while (ativoremove) {
+                            System.out.println("===Gerenciador de Estoque===");
+                            System.out.println("Diga a localização do item a ser removido: ");
+                            System.out.println(Estoque);
+                            String remove = scanner.nextLine();
+                            int RemoveItem = Integer.parseInt(remove) - 1;
+                            if (RemoveItem < 0 || RemoveItem >= Estoque.size()) {
+                                System.out.println("Valor Invalido");
+                                break;
+                            }
+                            Estoque.remove(RemoveItem);
+                            System.out.println("Estoque Atualizado: ");
+                            System.out.println(Estoque);
+                            System.out.println("Você deseja remover algo mais?\n" +
+                                    "Sim\n" +
+                                    "Não");
+                            String yesno = scanner.nextLine();
+                            if (yesno.equals("Não") || yesno.equals("não") || yesno.equals("nÃO") || (yesno.equals("Nao") || yesno.equals("nao") || yesno.equals("no") || yesno.equals("nAO"))) {
+
+                                ativoremove = false;
+                            }
                         }
-                        Estoque.remove(RemoveItem);
-                        System.out.println("Estoque Atualizado: ");
-                        System.out.println(Estoque);
                         break;
                     case "4":
+                        boolean ativoedit = true;
+                        while (ativoedit) {
                         System.out.println("===Gerenciador de Estoque===");
                         System.out.println("Diga a localização do item a ser alterado: ");
                         System.out.println(Estoque);
@@ -59,24 +81,37 @@ public class Main {
                         int AlterItem = Integer.parseInt(alter) - 1;
                         if (AlterItem < 0 || AlterItem >= Estoque.size()) {
                             System.out.println("Valor Invalido");
-                            break;}
-                        else {
+                            break;
+                        } else {
                             System.out.println("Digite o novo nome: ");
                             String New = scanner.nextLine();
                             Estoque.set(AlterItem, New);
                             System.out.println("Estoque atualizado:");
                             System.out.println(Estoque);
-                            break;
+                            System.out.println("Você deseja alterar algo mais?\n" +
+                                    "Sim\n" +
+                                    "Não");
+                            String yesno = scanner.nextLine();
+                            if (yesno.equals("Não") || yesno.equals("não") || yesno.equals("nÃO") || (yesno.equals("Nao") || yesno.equals("nao") || yesno.equals("no") || yesno.equals("nAO"))) {
+
+                                ativoedit = false;
+                                break;
+                            }
                         }
+
+
+                        }
+                        break;
                     case "5":
                         System.out.println("Você deseja sair?\n" +
                                 "Sim\n" +
                                 "Não");
                         String yesno = scanner.nextLine();
-                        if (yesno.equals("Sim") || yesno.equals("sim") || yesno.equals("SIM")|| yesno.equals("sIM")) {
+                        if (yesno.equals("Sim") || yesno.equals("sim") || yesno.equals("SIM") || yesno.equals("sIM")) {
                             // Your code here for when the condition is true
-                        ativo = false;
-                        break;}
+                            ativo = false;
+                            break;
+                        }
 
 
                 }
