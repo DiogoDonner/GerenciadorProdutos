@@ -43,6 +43,10 @@ public class Main {
                         System.out.println(Estoque);
                         String remove = scanner.nextLine();
                         int RemoveItem = Integer.parseInt(remove) - 1;
+                        if (RemoveItem < 0 || RemoveItem >= Estoque.size()) {
+                            System.out.println("Valor Invalido");
+                            break;
+                        }
                         Estoque.remove(RemoveItem);
                         System.out.println("Estoque Atualizado: ");
                         System.out.println(Estoque);
@@ -64,7 +68,7 @@ public class Main {
                                 "Sim\n" +
                                 "Não");
                         String yesno = scanner.nextLine();
-                        if (yesno.equals("Sim") || yesno.equals("sim") || yesno.equals("SIM")) {
+                        if (yesno.equals("Sim") || yesno.equals("sim") || yesno.equals("SIM")|| yesno.equals("sIM")) {
                             // Your code here for when the condition is true
                         ativo = false;
                         break;}
