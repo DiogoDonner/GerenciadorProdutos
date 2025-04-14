@@ -43,6 +43,21 @@ public class Main {
                    Estoque.remove(RemoveItem);
                    System.out.println("Estoque Atualizado: ");
                    System.out.println(Estoque);
+                   break;
+                case "4":
+                    System.out.println("===Gerenciador de Estoque===");
+                    System.out.println("Diga a localização do item a ser alterado: ");
+                    System.out.println(Estoque);
+                    String alter = scanner.nextLine();
+                    System.out.println("Digite o novo nome: ");
+                    String New = scanner.nextLine();
+                    int AlterItem = Integer.parseInt(alter)-1;
+                    Estoque.set(AlterItem,New);
+                    System.out.println("Estoque atualizado:");
+                    System.out.println(Estoque);
+                    break;
+
+
 
 
             }
