@@ -21,60 +21,60 @@ public class Main {
                     "4 - Alterar Produto\n" +
                     "5 - Sair");
             String option = scanner.nextLine();
-            switch (option) {
-                case "1":
-                    System.out.println("===Gerenciador de Estoque===");
-                    System.out.println("Digite o nome do produto para adicionar à lista:");
-                    String add = scanner.nextLine();
-                    Estoque.add(add);
-                    System.out.println("O item " + add + "foi adicionado á lista");
-                    System.out.println(Estoque);
-                    break;
-                case "2":
-                    System.out.println("===Gerenciador de Estoque===");
-                    System.out.println("Estoque: " + Estoque);
-                    break;
-                case "3":
-                    System.out.println("===Gerenciador de Estoque===");
-                    System.out.println("Diga a localização do item a ser removido: ");
-                    System.out.println(Estoque);
-                    String remove = scanner.nextLine();
-                   int RemoveItem = Integer.parseInt(remove)-1;
-                   Estoque.remove(RemoveItem);
-                   System.out.println("Estoque Atualizado: ");
-                   System.out.println(Estoque);
-                   break;
-                case "4":
-                    System.out.println("===Gerenciador de Estoque===");
-                    System.out.println("Diga a localização do item a ser alterado: ");
-                    System.out.println(Estoque);
-                    String alter = scanner.nextLine();
-                    System.out.println("Digite o novo nome: ");
-                    String New = scanner.nextLine();
-                    int AlterItem = Integer.parseInt(alter)-1;
-                    Estoque.set(AlterItem,New);
-                    System.out.println("Estoque atualizado:");
-                    System.out.println(Estoque);
-                    break;
-                case "5":
-                    System.out.println("Você deseja sair?\n" +
-                            "Sim\n" +
-                            "Não");
-                    String yesno = scanner.nextLine();
-                    ativo=false;
-                    break;
+            if (!option.equals("1") && !option.equals("2") && !option.equals("3") && !option.equals("4") && !option.equals("5")) {
+                System.out.println("Operação não reconhecida");
+            } else {
+                switch (option) {
+                    case "1":
+                        System.out.println("===Gerenciador de Estoque===");
+                        System.out.println("Digite o nome do produto para adicionar à lista:");
+                        String add = scanner.nextLine();
+                        Estoque.add(add);
+                        System.out.println("O item " + add + "foi adicionado á lista");
+                        System.out.println(Estoque);
+                        break;
+                    case "2":
+                        System.out.println("===Gerenciador de Estoque===");
+                        System.out.println("Estoque: " + Estoque);
+                        break;
+                    case "3":
+                        System.out.println("===Gerenciador de Estoque===");
+                        System.out.println("Diga a localização do item a ser removido: ");
+                        System.out.println(Estoque);
+                        String remove = scanner.nextLine();
+                        int RemoveItem = Integer.parseInt(remove) - 1;
+                        Estoque.remove(RemoveItem);
+                        System.out.println("Estoque Atualizado: ");
+                        System.out.println(Estoque);
+                        break;
+                    case "4":
+                        System.out.println("===Gerenciador de Estoque===");
+                        System.out.println("Diga a localização do item a ser alterado: ");
+                        System.out.println(Estoque);
+                        String alter = scanner.nextLine();
+                        System.out.println("Digite o novo nome: ");
+                        String New = scanner.nextLine();
+                        int AlterItem = Integer.parseInt(alter) - 1;
+                        Estoque.set(AlterItem, New);
+                        System.out.println("Estoque atualizado:");
+                        System.out.println(Estoque);
+                        break;
+                    case "5":
+                        System.out.println("Você deseja sair?\n" +
+                                "Sim\n" +
+                                "Não");
+                        String yesno = scanner.nextLine();
+                        ativo = false;
+                        break;
 
 
-
-
+                }
 
             }
+            //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+            // to see how IntelliJ IDEA suggests fixing it.
+
 
         }
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-
-
-
     }
 }
