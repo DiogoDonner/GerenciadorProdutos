@@ -14,7 +14,7 @@ public class Main {
 
             System.out.println("Escolha as opções\n" +
                     "1 - Adicionar Item no Estoque\n" +
-                    "2 - Ver Lista \n" +
+                    "2 - Ver Estoque \n" +
                     "3 - Remover Item no Estoque\n" +
                     "4 - Alterar Produto\n" +
                     "5 - Sair");
@@ -27,7 +27,7 @@ public class Main {
                         boolean ativoadd = true;
                         while (ativoadd) {
                             System.out.println("===Gerenciador de Estoque===");
-                            System.out.println("Digite o nome do produto para adicionar à lista:");
+                            System.out.println("Digite o nome do produto a ser adicionado à lista:");
                             String add = scanner.nextLine();
                             Estoque.add(add);
                             System.out.println("O item " + add + "foi adicionado á lista");
@@ -50,7 +50,7 @@ public class Main {
                         boolean ativoremove = true;
                         while (ativoremove) {
                             System.out.println("===Gerenciador de Estoque===");
-                            System.out.println("Diga a localização do item a ser removido: ");
+                            System.out.println("Diga a localização do item á ser removido: ");
                             System.out.println(Estoque);
                             String remove = scanner.nextLine();
                             int RemoveItem = Integer.parseInt(remove) - 1;
@@ -103,7 +103,7 @@ public class Main {
                         }
                         break;
                     case "5":
-                        System.out.println("Você deseja sair?\n" +
+                        System.out.println("Você REALMENTE deseja sair?\n" +
                                 "Sim\n" +
                                 "Não");
                         String yesno = scanner.nextLine();
