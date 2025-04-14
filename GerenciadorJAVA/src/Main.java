@@ -56,13 +56,18 @@ public class Main {
                         System.out.println("Diga a localização do item a ser alterado: ");
                         System.out.println(Estoque);
                         String alter = scanner.nextLine();
-                        System.out.println("Digite o novo nome: ");
-                        String New = scanner.nextLine();
                         int AlterItem = Integer.parseInt(alter) - 1;
-                        Estoque.set(AlterItem, New);
-                        System.out.println("Estoque atualizado:");
-                        System.out.println(Estoque);
-                        break;
+                        if (AlterItem < 0 || AlterItem >= Estoque.size()) {
+                            System.out.println("Valor Invalido");
+                            break;}
+                        else {
+                            System.out.println("Digite o novo nome: ");
+                            String New = scanner.nextLine();
+                            Estoque.set(AlterItem, New);
+                            System.out.println("Estoque atualizado:");
+                            System.out.println(Estoque);
+                            break;
+                        }
                     case "5":
                         System.out.println("Você deseja sair?\n" +
                                 "Sim\n" +
