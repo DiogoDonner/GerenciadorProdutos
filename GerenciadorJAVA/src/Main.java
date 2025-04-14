@@ -64,8 +64,10 @@ public class Main {
                                 "Sim\n" +
                                 "Não");
                         String yesno = scanner.nextLine();
+                        if (yesno.equals("Sim") || yesno.equals("sim") || yesno.equals("SIM")) {
+                            // Your code here for when the condition is true
                         ativo = false;
-                        break;
+                        break;}
 
 
                 }
