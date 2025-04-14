@@ -56,6 +56,14 @@ public class Main {
                     System.out.println("Estoque atualizado:");
                     System.out.println(Estoque);
                     break;
+                case "5":
+                    System.out.println("Você deseja sair?\n" +
+                            "Sim\n" +
+                            "Não");
+                    String yesno = scanner.nextLine();
+                    ativo=false;
+                    break;
+
 
 
 
