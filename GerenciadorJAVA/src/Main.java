@@ -33,6 +33,16 @@ public class Main {
                 case "2":
                     System.out.println("===Gerenciador de Estoque===");
                     System.out.println("Estoque: " + Estoque);
+                    break;
+                case "3":
+                    System.out.println("===Gerenciador de Estoque===");
+                    System.out.println("Diga a localização do item a ser removido: ");
+                    System.out.println(Estoque);
+                    String remove = scanner.nextLine();
+                   int RemoveItem = Integer.parseInt(remove)-1;
+                   Estoque.remove(RemoveItem);
+                   System.out.println("Estoque Atualizado: ");
+                   System.out.println(Estoque);
 
 
             }
